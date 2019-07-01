@@ -52,12 +52,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'responsive.middleware.DeviceInfoMiddleware',
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = [
+MIDDLEWARE_CLASSES = (
+    # Other middleware classes go here
+    'responsive.middleware.DeviceInfoMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # Other context processors included here
     'responsive.context_processors.device_info',
-]
+)
 
 DEFAULT_BREAKPOINTS = {
     'phone': 480,

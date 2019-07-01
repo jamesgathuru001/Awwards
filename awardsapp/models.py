@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-import numpy as np
 from django.db.models.signals import post_save
 from django.db.models import Avg, Max, Min
 
