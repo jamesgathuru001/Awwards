@@ -21,7 +21,7 @@
         {% for project in projects %}
 
         <div class="card border-secondary"><a href="{% url 'image' image.id %}">
-                <img src="{{project.project_image.url }}" class="img-fluid" id="eachimage" size="100px200"></a>
+                <img src="{{project.project_image.url }}" class="img-fluid" id="eachimage" size="800px200"></a>
             <p style="font-family: 'Dosis', sans-serif;"> Caption : {{ project.description}}</p>
             <p style="font-family: 'Dosis', sans-serif;">Posted by : {{ project.user}}</p>
         </div>
@@ -34,17 +34,7 @@
         <div class="footer text-center">
             <ul id="footer1">
                 <li>ABOUT US</li>
-                <li>SUPPORT</li>
-                <li>PRESS</li>
-                <li>API</li>
-                <li>JOBS</li>
-                <li>PRIVACY</li>
-                <li>TERMS</li>
-                <li>DIRECTORY</li>
-                <li>PROFILES</li>
-                <li>HASHTAGS</li>
-                <li>LANGUAGE</li>
-                <br>
+                
                 <li style="font-size:10px;"> <strong>© 2019 James Gathuru</strong></li>
             </ul>
         </div>

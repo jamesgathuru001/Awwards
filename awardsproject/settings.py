@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',
+    'bootstrap4',
     'tinymce',
     'rest_framework',
     'rest_framework.authtoken',
@@ -54,23 +54,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = (
-    # Other middleware classes go here
-    'responsive.middleware.DeviceInfoMiddleware',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    # Other context processors included here
-    'responsive.context_processors.device_info',
-)
-
-DEFAULT_BREAKPOINTS = {
-    'phone': 480,
-    'tablet': 767,
-    'desktop': None,
-}
-
-
 ROOT_URLCONF = 'awardsproject.urls'
 
 TEMPLATES = [
@@ -85,7 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        },
+        }, 
     },
 ]
 
@@ -123,6 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -143,3 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
